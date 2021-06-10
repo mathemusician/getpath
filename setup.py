@@ -6,7 +6,7 @@ LONG_DESCRIPTION = 'Pathing made easier. Inspired by pathlib'
 
 # Setting up
 setup(
-        name="getpath", 
+        name="getpaths", 
         version=VERSION,
         author="Jv Kyle Eclarin",
         author_email="<jvykleeclarin@gmail.com>",

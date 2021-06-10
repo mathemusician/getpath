@@ -1,4 +1,3 @@
 build/*
-lib/*
 dist/*
-getpath.egg-info/*
+getpaths.egg-info/*
