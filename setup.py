@@ -2,7 +2,14 @@ from setuptools import setup, find_packages
 
 VERSION = '0.0.1' 
 DESCRIPTION = 'Pathing Library'
-LONG_DESCRIPTION = 'Pathing made easier. Inspired by pathlib'
+
+
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    LONG_DESCRIPTION = f.read()
+
 
 # Setting up
 setup(

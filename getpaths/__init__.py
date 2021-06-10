@@ -10,10 +10,13 @@ import inspect
 
 
 # find path of the file doing the importing
+importing_dir = None
 for frame in inspect.stack()[1:]:
     if frame.filename[0] != '<':
         importing_dir = frame.filename
         break
+if importing_dir == None:
+    importing_dir = os.path
 
 class getpath(str):
     '''
