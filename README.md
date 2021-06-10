@@ -1,7 +1,7 @@
 # getpath
 Helps with pathing issues in python scripts. Inspired by pathlib, but smaller.
 
-Examples:
+# IMPORTING
 
 from getpath import getpath
 
@@ -39,3 +39,10 @@ custom_dir.add('..')
 
 custom_dir.up(1)
 # /a
+
+
+# LIST EXISTING FILES AND FOLDERS
+
+custom_dir.ls()
+# /a/b/example.txt
+# throws error if path does not exist
