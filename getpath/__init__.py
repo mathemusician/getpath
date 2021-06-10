@@ -5,11 +5,10 @@ convenience functions to help speed up the work
 '''
 
 import os
-import pickle as pl
-import time
 from copy import deepcopy
-
 import inspect
+
+
 # find path of the file doing the importing
 for frame in inspect.stack()[1:]:
     if frame.filename[0] != '<':
@@ -18,7 +17,6 @@ for frame in inspect.stack()[1:]:
 
 class getpath(str):
     '''
-
     '''
     def __new__(cls, *args, custom=False):
         if custom:
@@ -47,15 +45,6 @@ class getpath(str):
         return getpath(path, custom=True)
     
     def __truediv__(self, *args):
-        '''
-        paths = []
-        for arguments in args:
-            paths.append(arguments)
-        
-        path = os.sep.join([self.__str__(), os.sep.join(paths)])
-
-        return getpath(path)
-        '''
         current_path = deepcopy(self.__str__())
 
         paths = [current_path]
