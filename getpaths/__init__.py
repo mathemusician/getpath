@@ -16,7 +16,8 @@ for frame in inspect.stack()[1:]:
         importing_dir = frame.filename
         break
 if importing_dir == None:
-    importing_dir = os.path
+    # TODO: fix pathing for interactive terminals
+    importing_dir = '/jupyter.txt'
 
 class getpath(str):
     '''
