@@ -29,7 +29,7 @@ custom_dir.add('/a/example.txt')
 
 #  GO UP THE DIRECTORY
 ```
-custom_dir = getpath('a', 'b', ,custom=True)
+custom_dir = getpath('a','b',custom=True)
 
 custom_dir/'..'
 # /a
