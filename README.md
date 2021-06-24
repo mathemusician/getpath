@@ -1,5 +1,5 @@
 # getpath
-Helps with pathing issues in python scripts. Inspired by pathlib, but smaller.
+Helps with pathing in python scripts. Inspired by pathlib.
 
 # IMPORTING
 ```
