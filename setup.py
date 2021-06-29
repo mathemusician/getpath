@@ -48,6 +48,7 @@ setup(
         long_description_content_type='text/markdown',
         packages=find_packages(),
         install_requires=[],
+        url='https://pypi.org/project/getpaths/',
         project_urls={
         "Documentation": "https://pypi.org/project/getpaths/",
         "Code": "https://github.com/mathemusician/getpath",
