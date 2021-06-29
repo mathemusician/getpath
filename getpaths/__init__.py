@@ -83,10 +83,9 @@ custom_dir.ls()
         path = os.sep.join(paths)
 
         # get rid of accidental doubling
-        if custom:
-            double = os.path.sep + os.path.sep
-            while double in path:
-                path = path.replace(double, os.path.sep)
+        double = os.path.sep + os.path.sep
+        while double in path:
+            path = path.replace(double, os.path.sep)
                 
         if start_at_root == True:
             if path[0] != os.path.sep:
