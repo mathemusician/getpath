@@ -65,7 +65,15 @@ custom_dir.ls()
 # throws error if path does not exist
 
     '''
-    def __new__(cls, *args, custom=False):
+    def __new__(cls, *args, custom=False, start_at_root=True):
+
+        # adds separator at the beginning
+        if start_at_root == True and custom == True:
+            if args[0][0] != os.path.sep:
+                arguments = list(args)
+                first_arg = os.path.sep + arguments[0]
+                return getpath(first_arg, *arguments[1:], custom=True)
+
         if custom:
             paths = []
         else:
@@ -78,6 +86,7 @@ custom_dir.ls()
                 paths.append(arguments)
         
         path = os.sep.join(paths)
+
         return str.__new__(cls, path)
     
     def __init(self):
