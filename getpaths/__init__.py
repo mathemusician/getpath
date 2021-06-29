@@ -87,6 +87,10 @@ custom_dir.ls()
             double = os.path.sep + os.path.sep
             while double in path:
                 path = path.replace(double, os.path.sep)
+                
+        if start_at_root == True:
+            if path[0] != os.path.sep:
+                path = os.path.sep + path
 
         return str.__new__(cls, path)
     
