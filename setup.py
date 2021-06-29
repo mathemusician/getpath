@@ -25,7 +25,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 build_path = os.path.join(this_directory, 'build')
 dist_path = os.path.join(this_directory, 'dist')
 getpaths_info_path = os.path.join(this_directory, 'getpaths.egg-info')
-pycache_path = os.path.join(this_directory, getpaths, __pycache__)
+pycache_path = os.path.join(this_directory, 'getpaths', '__pycache__')
 
 if os.path.exists(build_path):
     shutil.rmtree(build_path)
