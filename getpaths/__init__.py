@@ -94,14 +94,21 @@ custom_dir.ls()
         super().__init__(self)
     
     def add(self, *args):
-        paths = []
-        for arguments in args:
-            paths.append(arguments)
+        current_path = deepcopy(self.__str__())
+
+        paths = [current_path]
         
-        path = os.sep.join([self.__str__(), os.sep.join(paths)])
+        for arguments in args:
+            if arguments == '..':
+                paths[0] = os.path.split(paths[0])[0]
+            else:
+                paths.append(arguments)
+        
+        path = os.sep.join(paths)
         return getpath(path, custom=True)
     
     def __truediv__(self, *args):
+        # same as add
         current_path = deepcopy(self.__str__())
 
         paths = [current_path]
