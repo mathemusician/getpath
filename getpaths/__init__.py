@@ -67,25 +67,26 @@ custom_dir.ls()
     '''
     def __new__(cls, *args, custom=False, start_at_root=True):
 
-        # adds separator at the beginning
-        if start_at_root == True and custom == True:
-            if args[0][0] != os.path.sep:
-                arguments = list(args)
-                first_arg = os.path.sep + arguments[0]
-                return getpath(first_arg, *arguments[1:], custom=True)
-
         if custom:
             paths = []
         else:
             paths = [os.path.dirname(importing_dir)]
         
+
         for arguments in args:
             if arguments == '..':
                 paths[0] = os.path.split(paths[0])[0]
             else:
                 paths.append(arguments)
         
+        
         path = os.sep.join(paths)
+
+        # get rid of accidental doubling
+        if custom:
+            double = os.path.sep + os.path.sep
+            while double in path:
+                path = path.replace(double, os.path.sep)
 
         return str.__new__(cls, path)
     
