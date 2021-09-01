@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 import os
 import shutil
 
-VERSION = '0.0.35' 
+VERSION = '1.0.00' 
 DESCRIPTION = 'Pathing Library'
 
 
